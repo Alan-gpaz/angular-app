@@ -1,0 +1,39 @@
+
+<div class="contenedor">
+
+  <h2>Operaciones CRUD</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Imagen</th>
+        <th>Título</th>
+        <th>Categoría</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      @for (producto of productos(); track producto.id) {
+        <tr>
+          <td>
+            <img
+              [src]="producto.image"
+              [alt]="producto.title"
+            >
+          </td>
+
+          <td>{{ producto.title }}</td>
+
+          <td>{{ producto.category }}</td>
+
+          <td>
+            <button class="borrar">Borrar</button>
+            <button class="actualizar">Actualizar</button>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+
+</div>

@@ -1,0 +1,22 @@
+<p>productos works!</p>
+
+<h1>Productos</h1>
+
+
+<div class="productos">
+  @for (producto of productos(); track producto.id) {
+    <div class="tarjeta">
+      <img
+        [src]="producto.image"
+        [alt]="producto.title"
+      >
+
+      <h2>{{ producto.title }}</h2>
+      <p>{{ producto.description }}</p>
+      <p><strong>Precio: ${{ producto.price }}</strong></p>
+      <p>Categoría: {{ producto.category }}</p>
+  <p>Reseñas: {{producto.rating.rate}}, Opiniones: {{producto.rating.count}} </p>
+      
+    </div>
+  }
+</div>

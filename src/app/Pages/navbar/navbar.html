@@ -1,0 +1,31 @@
+
+<header class="header">
+
+  <h1>Tienda Online</h1>
+
+  <nav class="links">
+
+    <a routerLink="/productos">Productos</a>
+
+    @if (auth.isAuthenticated()) {
+
+      <a routerLink="/usuario">Mi cuenta</a>
+
+      @if (auth.isAdmin()) {
+        <a routerLink="/admin">Admin</a>
+        <a routerLink="/panel">Panel CRUD</a>
+      }
+
+      <span>{{ auth.username() }}</span>
+
+      <button (click)="salir()">Salir</button>
+
+    } @else {
+
+      <a routerLink="/login">Ingresar</a>
+
+    }
+
+  </nav>
+
+</header>
